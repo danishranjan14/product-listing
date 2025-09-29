@@ -1,0 +1,41 @@
+/* simple responsive table and skeleton */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+@media (max-width: 700px) {
+  /* make table rows act like cards on small screens */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  tr {
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+  }
+  th { display: none; }
+  td { padding: 6px 0; }
+}
+
+.skeletonRow td {
+  padding: 8px;
+}
+
+.skeletonBox {
+  background: linear-gradient(90deg, #eee, #f5f5f5, #eee);
+  background-size: 200% 100%;
+  animation: shine 1.2s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shine {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
