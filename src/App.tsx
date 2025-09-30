@@ -6,7 +6,8 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      {/* Header */}
       <header style={{ padding: '1rem', borderBottom: '1px solid #eee' }}>
         <nav style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
           <Link to="/">Products</Link>
@@ -14,12 +15,26 @@ function App() {
         </nav>
       </header>
 
-      <main style={{ padding: '1rem' }}>
+      {/* Main */}
+      <main style={{ flex: 1, padding: '1rem' }}>
         <Routes>
           <Route path="/" element={<ProductsPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
         </Routes>
       </main>
+
+      {/* Footer */}
+      <footer
+        style={{
+          padding: '1rem',
+          borderTop: '1px solid #eee',
+          textAlign: 'center',
+          fontSize: '0.9rem',
+          color: '#555',
+        }}
+      >
+        Made with ❤️ for PharmEasy Assignment
+      </footer>
     </div>
   );
 }
